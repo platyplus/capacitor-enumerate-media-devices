@@ -10,8 +10,9 @@ export class EnumeratePluginWeb extends WebPlugin
     })
   }
 
-  async enumerateDevices(): Promise<MediaDeviceInfo[]> {
-    return navigator.mediaDevices.enumerateDevices()
+  async enumerateDevices(): Promise<{ devices: MediaDeviceInfo[] }> {
+    const devices = await navigator.mediaDevices.enumerateDevices()
+    return { devices }
   }
 
   async echo(options: { value: string }): Promise<{ value: string }> {
