@@ -5,6 +5,6 @@ declare module '@capacitor/core' {
 }
 
 export interface EnumeratePluginPlugin {
-  enumerateDevices(): Promise<MediaDeviceInfo[]>
+  enumerateDevices(): Promise<{ devices: MediaDeviceInfo[] }>
   echo(options: { value: string }): Promise<{ value: string }>
 }
